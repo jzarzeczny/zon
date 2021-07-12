@@ -67,70 +67,103 @@ body {
 
 .header {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 auto;
+  overflow: hidden;
   position: relative;
+  padding-bottom: 1rem;
   &::after {
     content: "";
     display: block;
+    height: 0.3rem;
     position: absolute;
-    height: 15px;
     background-color: $mainOrange;
-    width: 65%;
+    width: 100%;
     left: 0;
+    padding-left: -1rem;
     bottom: 0;
+    z-index: 2;
+  }
+
+  @include for-desktop-up {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+    &::after {
+      height: 1rem;
+    }
   }
 
   .header__halfCircle {
-    $size: 175px;
-    background-color: $mainOrange;
-    display: inline-block;
-    height: $size * 1;
-    width: $size * 2;
-    margin: -3rem 0 0 3rem;
-    border-bottom-left-radius: $size * 2;
-    border-bottom-right-radius: $size * 2;
-    grid-row: 1/2;
-    grid-column: 1/3;
+    display: none;
+
+    @include for-desktop-up {
+      $size: 175px;
+      background-color: $mainOrange;
+      display: inline-block;
+      height: $size * 1;
+      width: $size * 2;
+      margin: 0 auto;
+      border-bottom-left-radius: $size * 2;
+      border-bottom-right-radius: $size * 2;
+      grid-row: 1/2;
+      grid-column: 1/3;
+      margin: -3rem 0 0 3rem;
+    }
   }
 
   .header__links {
     background-color: #fff;
     align-self: end;
-    grid-column: 7/9;
     width: 100%;
     height: 3rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.7rem;
+    grid-column: 1/3;
+    grid-row: 3/4;
+
+    @include for-desktop-up {
+      grid-column: 7/9;
+      grid-row: 1/2;
+    }
   }
 
   .header__hamburger {
-    grid-row: 2/3;
     grid-column: 2/3;
+    margin-left: 5rem;
     align-self: center;
     color: #fff;
-    font-size: 3.5rem;
-    width: 6rem;
-    height: 6rem;
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
     background-color: $mainOrange;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @include for-desktop-up {
+      grid-row: 2/3;
+      grid-column: 2/3;
+      font-size: 3.5rem;
+      width: 6rem;
+      height: 6rem;
+      align-self: center;
+      margin: 0;
+    }
   }
 }
 //Logo
-
 .header__logo {
   margin-top: 20px;
-  grid-column: 4/6;
   font-family: $serifFont;
   font-style: normal;
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  grid-column: 1/2;
+  grid-row: 1/2;
 
   .logo__firstLetter {
     font-size: 6rem;
@@ -152,20 +185,36 @@ body {
     color: $mainOrange;
   }
 }
+@include for-desktop-up {
+  .header__logo {
+    grid-column: 4/6;
+  }
+}
 .header__logo--white {
   flex-grow: 0;
   color: white;
-  font-size: 0.7rem;
+  font-size: 0.3rem;
+
   font-weight: 400;
   margin: 0 auto;
+  @include for-desktop-up {
+    font-size: 0.7rem;
+  }
   .logo__firstLetter--white {
     color: white;
-    font-size: 4rem;
+    font-size: 2rem;
+    @include for-desktop-up {
+      font-size: 4rem;
+    }
 
     &::after {
       background-color: white;
-      height: 50px;
+      height: 25px;
+
       margin: 0.5rem;
+      @include for-desktop-up {
+        height: 50px;
+      }
     }
   }
 }
@@ -173,21 +222,35 @@ body {
 // Navbar components
 .navbar {
   grid-row: 2/3;
-  grid-column: 3/9;
+  grid-column: 1/3;
+
+  @include for-desktop-up {
+    grid-row: 2/3;
+    grid-column: 3/9;
+  }
   .navbar__ul {
     margin: 0;
+    padding-left: 0;
     height: 100%;
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
     justify-content: space-between;
     align-items: center;
+    @include for-desktop-up {
+      margin-left: 2rem;
+    }
   }
   .navbar__a {
     color: $grayish;
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 500;
+    font-size: 0.6rem;
+    font-weight: 400;
+
+    @include for-desktop-up {
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
   }
   .navbar__a--footer {
     color: #fff;
@@ -197,7 +260,10 @@ body {
   flex-grow: 1;
   .navbar__ul--footer {
     color: #fff;
-    justify-content: flex-start;
+    justify-content: flex-end;
+    @include for-desktop-up {
+      justify-content: flex-start;
+    }
     .navbar__li--footer {
       margin: 0 1rem;
     }
@@ -230,6 +296,14 @@ body {
       color: #fff;
       background-color: #9b9c9e;
       margin: -7px 0 0 0;
+      font-size: 0.6rem;
+      height: calc(1.5rem-7px);
+      line-height: 1.5rem;
+      font-weight: 400;
+
+      @include for-desktop-up {
+        font-size: 1rem;
+      }
     }
   }
 }
@@ -237,15 +311,29 @@ body {
 
 .movieSection {
   background-color: $mainOrange;
-  height: 20rem;
-  padding: 3rem;
+  height: 15rem;
   display: flex;
+  padding: 1rem;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
+
+  @include for-desktop-up {
+    height: 20rem;
+    padding: 3rem;
+
+    flex-direction: row;
+  }
+
   .movieSection__window {
     background-color: black;
-    width: 45%;
-    height: 100%;
+    width: 300px;
+    margin-bottom: 1rem;
+    height: 200px;
+    @include for-desktop-up {
+      width: 45%;
+      height: 100%;
+    }
   }
 }
 
@@ -269,11 +357,20 @@ body {
     font-weight: 400;
   }
   .quotation__content {
+    font-size: 0.6rem;
     flex-grow: 2.5;
     line-height: 1.5;
     font-style: italic;
+    text-align: justify;
+    @include for-desktop-up {
+      font-size: 1rem;
+      text-align: left;
+    }
     &::first-letter {
-      margin-left: 2.1rem;
+      margin-left: 1rem;
+      @include for-desktop-up {
+        margin-left: 2.1rem;
+      }
     }
     .content__quote {
       font-size: 2rem;
@@ -288,15 +385,22 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: $grayish;
-  padding: 2rem;
+  padding: 1rem;
+  @include for-desktop-up {
+    padding: 2rem;
+  }
 }
 .footer__decoration {
-  $size: 90px;
-  background-color: #fff;
-  margin: 0 4rem -4rem 0;
-  display: inline-block;
-  width: $size * 2;
-  height: $size;
-  border-top-left-radius: $size * 2;
-  border-top-right-radius: $size * 2;
+  display: none;
+  @include for-desktop-up {
+    display: block;
+    $size: 90px;
+    background-color: #fff;
+    margin: 0 4rem -4rem 0;
+    display: inline-block;
+    width: $size * 2;
+    height: $size;
+    border-top-left-radius: $size * 2;
+    border-top-right-radius: $size * 2;
+  }
 }
