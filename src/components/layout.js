@@ -10,8 +10,12 @@ import { MdEmail } from "@react-icons/all-files/md/MdEmail";
 import "../index.scss";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import useMetadata from "./hooks/useMetadata";
 
 export default function Layout({ children }) {
+  const data = useMetadata();
+  const headerData = data.site.siteMetadata.menuLinks;
+  const footerData = data.site.siteMetadata.navLinks;
   return (
     <div className="container">
       <header className="header">
@@ -34,10 +38,10 @@ export default function Layout({ children }) {
         <div className="header__hamburger">
           <CgMenu />
         </div>
-        <Navbar />
+        <Navbar data={headerData} location="header" />
       </header>
       <main>{children}</main>
-      <Footer />
+      <Footer data={footerData} />
     </div>
   );
 }
