@@ -351,12 +351,12 @@ body {
     justify-content: space-between;
     margin-left: 1rem;
     @include for-desktop-up {
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     .navbar__li--footer {
       margin: 0 1rem;
-flex-basis: auto;
+      flex-basis: auto;
       border-bottom: 2px solid transparent;
 
       &:hover,
@@ -367,6 +367,9 @@ flex-basis: auto;
     }
     .navbar__a--footer{ 
       font-size: 0.7rem;
+      @include for-desktop-up{
+        font-size: 1.2rem;
+      }
     }
   }
 }
