@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { CgMenu } from "@react-icons/all-files/cg/CgMenu";
-import {GiHamburgerMenu} from '@react-icons/all-files/gi/GiHamburgerMenu'
 import { CgCloseO } from "@react-icons/all-files/cg/CgCloseO";
 import { AiFillTwitterCircle } from "@react-icons/all-files/ai/AiFillTwitterCircle";
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
@@ -49,7 +48,7 @@ export default function Layout({ children }) {
           <MdEmail />
         </div>
         <button className="header__hamburger" onClick={openNav}>
-          {hamburgerOpen === false ? <GiHamburgerMenu /> : <CgCloseO />}
+          {hamburgerOpen === false ? <CgMenu /> : <CgCloseO />}
         </button>
         <nav
           className={`header__navigation  ${
