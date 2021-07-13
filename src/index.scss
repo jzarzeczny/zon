@@ -167,6 +167,8 @@ body {
   align-items: center;
   grid-column: 1/2;
   grid-row: 1/2;
+  color: #000;
+  text-decoration: none;
 
   .logo__firstLetter {
     font-size: 6rem;
@@ -185,7 +187,7 @@ body {
   }
   .logo h1 {
     margin-left: 1rem;
-    color: $mainOrange;
+    
   }
 }
 @include for-desktop-up {
@@ -378,6 +380,7 @@ body {
       height: calc(1.5rem-7px);
       line-height: 1.5rem;
       font-weight: 400;
+      padding: 7px 0;
 
       @include for-desktop-up {
         font-size: 1rem;
