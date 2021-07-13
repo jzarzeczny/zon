@@ -246,6 +246,7 @@ body {
 
 .navigation__ul {
   display: flex;
+  position: relative;
   flex-flow: column nowrap;
   align-items: center;
   justify-content: space-around;
@@ -255,7 +256,7 @@ body {
   margin: 10rem 0 0 0;
   @include for-desktop-up {
     flex-flow: row nowrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 100%;
     margin: 0;
@@ -264,8 +265,15 @@ body {
 .navigation__li {
   margin: 0 auto;
   padding: 0;
-  padding: 1rem 1rem;
+  padding: 0.5rem 1rem;
   text-align: center;
+  border: 2px solid transparent;
+  &:hover,
+  &:active{
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+
+  }
 }
 .navigation__a {
   margin: 3rem 0;
@@ -315,7 +323,6 @@ body {
 
     @include for-desktop-up {
       flex-basis: auto;
-      text-align: left;
       margin: 0;
     }
   }
@@ -336,17 +343,47 @@ body {
     color: #fff;
   }
 }
+// Navbar footer version
 .navbar--footer {
   flex-grow: 1;
   .navbar__ul--footer {
     color: #fff;
-    justify-content: flex-end;
+    justify-content: space-between;
+    margin-left: 1rem;
     @include for-desktop-up {
       justify-content: flex-start;
     }
+
     .navbar__li--footer {
       margin: 0 1rem;
+flex-basis: auto;
+      border-bottom: 2px solid transparent;
+
+      &:hover,
+      &:active {
+        border-bottom: 2px solid $mainOrange;
+      }
+    
     }
+    .navbar__a--footer{ 
+      font-size: 0.7rem;
+    }
+  }
+}
+
+// Navbar header 
+.navbar__li--header {
+  width: 100%;
+  padding: 0.3rem;
+  border: 2px solid transparent;
+  text-align: center;
+  transition: border 0.6s ease;
+  &:hover,
+  &:active{
+    border:2px solid $mainOrange;
+  }
+  &:active{
+    margin-bottom: 3px;
   }
 }
 
@@ -362,8 +399,17 @@ body {
     flex-grow: 1;
     text-decoration: none;
     margin: 0.5rem;
+    border: 2px solid transparent;
+    transition: border 0.4s ease;
     &:nth-child(5) {
       flex-grow: 2;
+    }
+    &:hover,
+    &:active{
+      border: 2px solid $mainOrange;
+      .card__heading{
+        background-color: $mainOrange;
+      }
     }
 
     .card__image {
@@ -376,11 +422,13 @@ body {
       color: #fff;
       background-color: #9b9c9e;
       margin: -7px 0 0 0;
-      font-size: 0.6rem;
+      font-size: 0.8rem;
       height: calc(1.5rem-7px);
       line-height: 1.5rem;
-      font-weight: 400;
+      font-weight: 500;
       padding: 7px 0;
+      transition: background-color 0.4s ease;
+
 
       @include for-desktop-up {
         font-size: 1rem;
