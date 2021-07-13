@@ -82,7 +82,7 @@ body {
     left: 0;
     padding-left: -1rem;
     bottom: 0;
-    z-index: 2;
+    z-index: 1;
   }
 
   @include for-desktop-up {
@@ -141,9 +141,11 @@ body {
     height: 4rem;
     background-color: $mainOrange;
     border-radius: 50%;
+    border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 3;
 
     @include for-desktop-up {
       grid-row: 2/3;
@@ -217,6 +219,64 @@ body {
         height: 50px;
       }
     }
+  }
+}
+// Header navigation to different sites
+.header__navigation {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  height: 80vh;
+  width: 80vw;
+  background-color: #ff9236;
+  z-index: 2;
+  transition: all 0.3s ease-in;
+  @include for-desktop-up {
+    display: none;
+    position: relative;
+    grid-column: 2/9;
+    grid-row: 2/3;
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.navigation__ul {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  @include for-desktop-up {
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+  }
+}
+.navigation__li {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+.navigation__a {
+  margin: 3rem 0;
+  font-size: 2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.header__navigation--open {
+  right: 0;
+  @include for-desktop-up {
+    display: block;
+    z-index: 2;
   }
 }
 
