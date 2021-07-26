@@ -32,13 +32,13 @@ export default function Layout({ children }) {
     <div className="container">
       <header className="header">
         <div className="header__halfCircle"></div>
-        <div className="header__logo">
+        <Link to='/' className="header__logo" onClick={()=> setHamburgerOpen(false)}>
           <em className="logo__firstLetter">Ż</em>
           <h1>
             ŻYCIE <br />
             OD NOWA
           </h1>
-        </div>
+        </Link>
         <div className="header__links">
           <AiFillTwitterCircle />
           <FaFacebook />
