@@ -1,54 +1,36 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# ZON
 
-## 🚀 Quick start
+Main idea behind this project is to make the design made for friend of mine real. In other word to make jpg into layout in gatsby.
 
-1.  **Create a Gatsby site.**
+This project use Gatsby as a main pillar.
+In addition SASS is used to manage CSS.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Image
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+![Inspiration][./images/zon.jpg]
 
-2.  **Start developing.**
+## Versions
 
-    Navigate into your new site’s directory and start it up.
+### level-1
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Moved to react. Decided to prepare for online research.
 
-3.  **Open the code and start customizing!**
+Currently created: Basic concept, hardcoded tutorial, tutoiral ax-cpt with json file to store important data.
 
-    Your site is now running at http://localhost:8000!
+Planning features: Measure the reaction time, implement proactive and reactive strategy, localstorage of "nickname", link the data with database/airtable.
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+### level-2 - 26.07
 
-4.  **Learn more**
+Refactored the majority of code. Learning tests. Abstracted lots of data into json file. Changed the structure of project. Added sounds effect.
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Next features:
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+- Implement airtable connection to store data.
+- Make a autorization process.
+- Add tests.
+- Make sure text files are correct (in terms of experiment).
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## Resources
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+This research is based on [work of this lab](https://sites.wustl.edu/dualmechanisms/tasks/)
+In addition, there is a lot of research that use bahavioral task in lab. My goal is to move it to internet, check the area that noone test before.
